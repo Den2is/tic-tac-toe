@@ -15,10 +15,14 @@ def print_board(grid):
 
 
 def is_winner(grid, player):
+    """checking if there's a winner
+    """
+    #rows winner
     for row in grid:
         if row.count(player) == 3 and row[0] != '-':
             return True
 
+    #column winner
     for row in range(len(grid)):
         aux = []
         for col in range(len(grid)):
@@ -46,6 +50,9 @@ def is_winner(grid, player):
 
 
 def valid_move(grid, row, col):
+    """If the move of the Player is valid or not.
+    """
+
     if grid[row][col] == '-':
         return True
     else:
@@ -53,6 +60,11 @@ def valid_move(grid, row, col):
 
 
 def get_coordinates():
+    """getting the moves
+    firs digit is the rows value
+    second digit is the columns value
+    """
+
     while True:
         move = input("Type the row/col value: ")
 
@@ -68,6 +80,7 @@ def get_coordinates():
 
 
 def run():
+    
     grid = [['-','-','-'],
             ['-','-','-'],
             ['-','-','-']]
